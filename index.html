@@ -3,30 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tam Ekran GIF</title>
+  <title>GIF Gösterimi</title>
   <style>
+    /* Sayfanın tümünü kaplayan siyah arka plan */
     html, body {
       margin: 0;
       padding: 0;
+      background-color: black;
       height: 100%;
-      overflow: hidden;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .fullscreen-gif {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* Ekrana taşmadan, taşarsa keserek tam oturtur */
-      z-index: -1; /* Eğer üstüne içerik koymak istersen, gif arkada kalır */
+    /* GIF'e sabit boyut ve responsive uyum */
+    .gif-wrapper img {
+      width: 426px;
+      height: 240px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    /* Mobil uyum için ekstra koruma */
+    @media (orientation: portrait) {
+      .gif-wrapper img {
+        width: 90vw;
+        height: auto;
+      }
+    }
+
+    @media (orientation: landscape) {
+      .gif-wrapper img {
+        height: 90vh;
+        width: auto;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- GIF dosyasının yolunu "your-gif.gif" yerine kendi gif'inin linkiyle değiştir -->
-  <img src="LogoGif.gif" alt="Tam ekran GIF" class="fullscreen-gif">
-
+  <div class="gif-wrapper">
+    <!-- Buraya kendi GIF dosyanın yolunu yaz -->
+    <img src="LogoGif.gif" alt="GIF">
+  </div>
 </body>
 </html>

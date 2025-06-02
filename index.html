@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tam Ekran GIF</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .fullscreen-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover; /* Ekrana taşmadan, taşarsa keserek tam oturtur */
+      z-index: -1; /* Eğer üstüne içerik koymak istersen, gif arkada kalır */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GIF dosyasının yolunu "your-gif.gif" yerine kendi gif'inin linkiyle değiştir -->
+  <img src="LogoGif.gif" alt="Tam ekran GIF" class="fullscreen-gif">
+
+</body>
+</html>
